@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StratDots - Frontline War Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    
+    <header>
+        <div class="container">
+            <h1>STRATDOTS</h1>
+            <p class="tagline">// REAL-TIME STRATEGY GAME //</p>
+            <div class="theme-switcher">
+                <button id="defaultTheme" class="theme-btn active">DEFAULT</button>
+                <button id="advancedTheme" class="theme-btn">ADVANCED PACK</button>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="#about">ABOUT</a>
+            <a href="#features">FEATURES</a>
+            <a href="#screenshots">SCREENSHOTS</a>
+            <a href="#gameplay">GAMEPLAY</a>
+            <a href="#download">DOWNLOAD</a>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>COMMAND YOUR FORCES</h2>
+                <p>Real-time strategy battles on custom-designed battlefields</p>
+                <a href="https://ottomanism.itch.io/strat-dots" target="_blank" class="btn-primary">DEPLOY NOW</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>[ ABOUT ]</h2>
+            <p>StratDots is a real-time strategy war game where you command armies across dynamic battlefields. Choose your side, deploy your forces, and dominate the enemy.</p>
+            <p>Built with LÖVE2D (Lua), StratDots delivers intense strategic combat with 2 built-in maps, a custom map maker, and challenging AI opponents.</p>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2>[ FEATURES ]</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>[X] REAL-TIME COMBAT</h3>
+                    <p>Command infantry, cavalry, and tanks in dynamic battles with intelligent AI opponents.</p>
+                </div>
+                <div class="feature">
+                    <h3>[#] CUSTOM MAPS</h3>
+                    <p>2 built-in historical maps (Medieval 1444 & WW2 1941) plus a custom map maker to design your own battlefields.</p>
+                </div>
+                <div class="feature">
+                    <h3>[>] UNIT FORMATIONS</h3>
+                    <p>Deploy units in line, arrow, single file, or grouped formations for strategic positioning.</p>
+                </div>
+                <div class="feature">
+                    <h3>[^] AIR SUPPORT</h3>
+                    <p>Build airbases and deploy Su-25 ground attack aircraft for devastating bombing runs.</p>
+                </div>
+                <div class="feature">
+                    <h3>[=] DEFENSIVE STRUCTURES</h3>
+                    <p>Construct walls, artillery emplacements, and fortifications to hold the line.</p>
+                </div>
+                <div class="feature">
+                    <h3>[*] TEXTURE PACKS</h3>
+                    <p>Customize your experience with Advanced Pack and Premium Rectangles texture packs.</p>
+                </div>
+                <div class="feature">
+                    <h3>[!] DIFFICULTY MODES</h3>
+                    <p>Easy, Medium, and Hard AI difficulty. Plus Sandbox Mode for unlimited resources.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="screenshots">
+        <div class="container">
+            <h2>[ SCREENSHOTS ]</h2>
+            <div class="screenshot-gallery">
+                <div class="screenshot-item">
+                    <img class="default-screenshot" src="screenshots/default/battle1.png" alt="Intense battlefield combat with infantry and tanks">
+                    <img class="advanced-screenshot" src="screenshots/advanced/battle1.png" alt="Intense battlefield combat with advanced pack visuals" style="display: none;">
+                    <p class="caption">Intense frontline battle - Infantry and tank formations clash</p>
+                </div>
+                <div class="screenshot-item">
+                    <img class="default-screenshot" src="screenshots/default/airbase.png" alt="Airbase with Su-25 ground attack aircraft">
+                    <img class="advanced-screenshot" src="screenshots/advanced/airbase.png" alt="Airbase with advanced pack visuals" style="display: none;">
+                    <p class="caption">Su-25 bombing run - Air support devastating enemy positions</p>
+                </div>
+                <div class="screenshot-item">
+                    <img class="default-screenshot" src="screenshots/default/terrain.png" alt="Built-in battlefield maps">
+                    <img class="advanced-screenshot" src="screenshots/advanced/terrain.png" alt="Battlefield maps with advanced pack visuals" style="display: none;">
+                    <p class="caption">Built-in maps and custom map maker - Create your own battlefields</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gameplay">
+        <div class="container">
+            <h2>[ GAMEPLAY ]</h2>
+            <div class="gameplay-section">
+                <h3>UNIT TYPES</h3>
+                <ul>
+                    <li><strong>INFANTRY</strong> - Fast, cheap, and versatile foot soldiers (50 coins)</li>
+                    <li><strong>CAVALRY</strong> - Rapid mounted units for flanking maneuvers (100 coins)</li>
+                    <li><strong>TANKS</strong> - Heavy armored units with devastating firepower (200 coins)</li>
+                </ul>
+            </div>
+
+            <div class="gameplay-section">
+                <h3>CONTROLS</h3>
+                <ul>
+                    <li><strong>LEFT CLICK</strong> - Select units</li>
+                    <li><strong>SHIFT + CLICK</strong> - Multi-select units</li>
+                    <li><strong>DRAG</strong> - Box selection</li>
+                    <li><strong>MIDDLE MOUSE</strong> - Pan camera</li>
+                    <li><strong>SCROLL WHEEL</strong> - Zoom in/out</li>
+                    <li><strong>R</strong> - Recenter camera</li>
+                    <li><strong>SPACE</strong> - Pause/Resume battle</li>
+                    <li><strong>F3</strong> - Toggle FPS counter</li>
+                    <li><strong>F11</strong> - Toggle fullscreen</li>
+                    <li><strong>F12</strong> - Screenshot mode</li>
+                </ul>
+            </div>
+
+            <div class="gameplay-section">
+                <h3>STRATEGY TIPS</h3>
+                <ul>
+                    <li>Deploy units along the center line for automatic positioning</li>
+                    <li>Capture points generate income - control the map to fund your army</li>
+                    <li>Use formations to control unit facing and positioning</li>
+                    <li>Artillery emplacements provide long-range fire support</li>
+                    <li>Aircraft bombing runs can devastate enemy concentrations</li>
+                    <li>Walls slow enemy advances and protect key positions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="download">
+        <div class="container">
+            <h2>[ DOWNLOAD ]</h2>
+            <div class="download-box">
+                <h3>SYSTEM REQUIREMENTS</h3>
+                <div class="requirements">
+                    <div>
+                        <h4>MINIMUM</h4>
+                        <ul>
+                            <li>OS: Windows 7/8/10/11, Linux and Mac</li>
+                            <li>RAM: 2 GB</li>
+                            <li>Graphics: OpenGL 2.1 support</li>
+                            <li>Storage: 100 MB</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>RECOMMENDED</h4>
+                        <ul>
+                            <li>OS: Windows 10/11, Linux and Mac</li>
+                            <li>RAM: 4 GB</li>
+                            <li>Graphics: Dedicated GPU</li>
+                            <li>Storage: 200 MB</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="https://ottomanism.itch.io/strat-dots" target="_blank" class="btn-download">DOWNLOAD STRATDOTS</a>
+                <p class="version">Version 0.9.0 BETA | Windows, Linux and Mac | $1</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>StratDots - Real-Time Strategy Game</p>
+            <p>Built with LÖVE2D Framework | 2025</p>
+            <p class="small">Open source strategy game | Command armies in battle</p>
+        </div>
+    </footer>
+
+    <script src="theme.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

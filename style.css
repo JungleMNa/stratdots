@@ -1,0 +1,667 @@
+/* StratDots Website - War Theme */
+/* DEFAULT: Gray/neutral military style matching in-game UI */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #1a1a1c;
+    color: #d0d0d0;
+    line-height: 1.6;
+    position: relative;
+}
+
+/* Noise/grain overlay for gritty look */
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px);
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.3;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(180deg, #2a2a2e 0%, #1a1a1c 100%);
+    border-bottom: 3px solid #4d4d58;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+header h1 {
+    font-size: 3.5em;
+    color: #7f7f8c;
+    text-shadow: 0 0 10px rgba(127, 127, 140, 0.4),
+                 3px 3px 0 #1a1a1c;
+    letter-spacing: 8px;
+    font-weight: bold;
+}
+
+.tagline {
+    color: #888;
+    font-size: 1.1em;
+    letter-spacing: 3px;
+    margin-top: 5px;
+}
+
+/* Theme Switcher */
+.theme-switcher {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.theme-btn {
+    background-color: #1a1a1c;
+    color: #888;
+    border: 2px solid #2a2a2c;
+    padding: 10px 25px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.theme-btn:hover {
+    border-color: #3a5a3a;
+    color: #aaa;
+}
+
+.theme-btn.active {
+    background-color: #3d3d4a;
+    border-color: #7f7f8c;
+    color: #d0d0d0;
+    box-shadow: 0 0 10px rgba(127, 127, 140, 0.3);
+}
+
+/* Navigation */
+nav {
+    background-color: #1f1f23;
+    border-bottom: 2px solid #4d4d58;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+nav .container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px 20px;
+}
+
+nav a {
+    color: #888;
+    text-decoration: none;
+    font-size: 1.1em;
+    letter-spacing: 2px;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+}
+
+nav a:hover {
+    color: #8c8c9c;
+    border: 1px solid #4d4d58;
+    background-color: rgba(127, 127, 140, 0.1);
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(135deg, #28282e 0%, #1a1a1c 50%, #25252a 100%);
+    padding: 100px 0;
+    text-align: center;
+    border-bottom: 3px solid #4d4d58;
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(127, 127, 140, 0.03) 35px, rgba(127, 127, 140, 0.03) 70px);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+#hero h2 {
+    font-size: 3em;
+    color: #9c9cac;
+    text-shadow: 0 0 15px rgba(156, 156, 172, 0.4),
+                 2px 2px 0 #1a1a1c;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+}
+
+#hero p {
+    font-size: 1.3em;
+    color: #aaa;
+    margin-bottom: 40px;
+}
+
+/* Buttons */
+.btn-primary, .btn-download {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #3d3d4a;
+    color: #d0d0d0;
+    text-decoration: none;
+    border: 2px solid #7f7f8c;
+    font-size: 1.2em;
+    letter-spacing: 3px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before, .btn-download::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(127, 127, 140, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before, .btn-download:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover, .btn-download:hover {
+    background-color: #4d4d5a;
+    border-color: #9c9cac;
+    box-shadow: 0 0 15px rgba(127, 127, 140, 0.4),
+                0 4px 12px rgba(0,0,0,0.5);
+    transform: translateY(-2px);
+}
+
+/* Sections */
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid #222;
+}
+
+section h2 {
+    font-size: 2.5em;
+    color: #7f7f8c;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 0 #1a1a1c;
+}
+
+#about {
+    background-color: #1f1f23;
+}
+
+#about p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #bbb;
+    margin-bottom: 15px;
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Features Grid */
+#features {
+    background: linear-gradient(180deg, #1a1a1c 0%, #25252a 100%);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.feature {
+    background-color: #28282e;
+    border: 2px solid #3d3d4a;
+    padding: 25px;
+    transition: all 0.3s;
+}
+
+.feature:hover {
+    border-color: #5d5d6a;
+    background-color: #32323a;
+    box-shadow: 0 0 15px rgba(127, 127, 140, 0.2);
+    transform: translateY(-3px);
+}
+
+.feature h3 {
+    color: #9c9cac;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.feature p {
+    color: #999;
+    line-height: 1.6;
+}
+
+/* Gameplay Section */
+#gameplay {
+    background-color: #1f1f23;
+}
+
+.gameplay-section {
+    margin-bottom: 40px;
+    background-color: #28282e;
+    padding: 25px;
+    border-left: 4px solid #4d4d58;
+}
+
+.gameplay-section h3 {
+    color: #9c9cac;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.gameplay-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.gameplay-section ul li {
+    color: #aaa;
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.gameplay-section ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #7f7f8c;
+    font-weight: bold;
+}
+
+.gameplay-section ul li strong {
+    color: #9c9cac;
+}
+
+/* Download Section */
+#download {
+    background: linear-gradient(180deg, #1a1a1c 0%, #23232a 100%);
+    padding: 80px 0;
+}
+
+.download-box {
+    background-color: #28282e;
+    border: 3px solid #4d4d58;
+    padding: 40px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.download-box h3 {
+    color: #9c9cac;
+    font-size: 2em;
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+}
+
+.requirements {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.requirements h4 {
+    color: #7f7f8c;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.requirements ul {
+    list-style: none;
+    padding: 0;
+}
+
+.requirements ul li {
+    color: #aaa;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.requirements ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #7f7f8c;
+}
+
+.version {
+    margin-top: 20px;
+    color: #888;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1c;
+    border-top: 3px solid #4d4d58;
+    padding: 40px 0;
+    text-align: center;
+    color: #666;
+}
+
+footer p {
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+footer .small {
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Screenshots Section */
+#screenshots {
+    background: linear-gradient(180deg, #25252a 0%, #1a1a1c 100%);
+}
+
+.screenshot-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.screenshot-item {
+    background-color: #28282e;
+    border: 2px solid #3d3d4a;
+    overflow: hidden;
+    transition: all 0.3s;
+    position: relative;
+    cursor: pointer;
+    aspect-ratio: 16/9;
+}
+
+.screenshot-item:hover {
+    border-color: #5d5d6a;
+    box-shadow: 0 0 20px rgba(127, 127, 140, 0.3);
+    transform: translateY(-5px);
+}
+
+.screenshot-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: all 0.3s;
+    filter: brightness(0.85);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.screenshot-item:hover img {
+    filter: brightness(1);
+    transform: scale(1.05);
+}
+
+.screenshot-item .caption {
+    padding: 15px;
+    color: #aaa;
+    font-size: 0.95em;
+    text-align: center;
+    background-color: #1f1f23;
+    border-top: 1px solid #3d3d4a;
+    line-height: 1.4;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.screenshot-item:hover .caption {
+    color: #d0d0d0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+        letter-spacing: 4px;
+    }
+    
+    #hero h2 {
+        font-size: 2em;
+    }
+    
+    nav .container {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .requirements {
+        grid-template-columns: 1fr;
+    }
+    
+    .screenshot-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== ADVANCED PACK THEME ===== */
+/* Realistic texture pack - Vibrant nature colors matching advanced_pack.lua */
+
+body.advanced-theme {
+    background-color: #28352a;
+}
+
+body.advanced-theme header {
+    background: linear-gradient(180deg, #3a5032 0%, #28352a 100%);
+    border-bottom: 3px solid #5a7040;
+}
+
+body.advanced-theme header h1 {
+    color: #6b9450;
+    text-shadow: 0 0 15px rgba(107, 148, 80, 0.6),
+                 3px 3px 0 #28352a;
+}
+
+body.advanced-theme .tagline {
+    color: #8a9878;
+}
+
+body.advanced-theme .theme-btn.active {
+    background-color: #4a6038;
+    border-color: #6b9450;
+    color: #e8f0d8;
+    box-shadow: 0 0 10px rgba(107, 148, 80, 0.4);
+}
+
+body.advanced-theme nav {
+    background-color: #2a3828;
+    border-bottom: 2px solid #4a5838;
+}
+
+body.advanced-theme nav a:hover {
+    color: #6b9450;
+    border: 1px solid #4a6038;
+    background-color: rgba(107, 148, 80, 0.1);
+}
+
+body.advanced-theme #hero {
+    background: linear-gradient(135deg, #3a4a35 0%, #28352a 50%, #354038 100%);
+    border-bottom: 3px solid #5a7040;
+}
+
+body.advanced-theme #hero::before {
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(107, 148, 80, 0.05) 35px, rgba(107, 148, 80, 0.05) 70px);
+}
+
+body.advanced-theme #hero h2 {
+    color: #7ba860;
+    text-shadow: 0 0 20px rgba(123, 168, 96, 0.6),
+                 2px 2px 0 #28352a;
+}
+
+body.advanced-theme .btn-primary,
+body.advanced-theme .btn-download {
+    background-color: #4a6038;
+    border: 2px solid #6b9450;
+}
+
+body.advanced-theme .btn-primary:hover,
+body.advanced-theme .btn-download:hover {
+    background-color: #5a7048;
+    border-color: #7ba860;
+    box-shadow: 0 0 15px rgba(107, 148, 80, 0.5),
+                0 4px 12px rgba(0,0,0,0.5);
+}
+
+body.advanced-theme section {
+    border-bottom: 1px solid #3a4835;
+}
+
+body.advanced-theme section h2 {
+    color: #6b9450;
+    text-shadow: 2px 2px 0 #28352a;
+}
+
+body.advanced-theme #about {
+    background-color: #2a3828;
+}
+
+body.advanced-theme #features {
+    background: linear-gradient(180deg, #28352a 0%, #323f30 100%);
+}
+
+body.advanced-theme .feature {
+    background-color: #3a4a35;
+    border: 2px solid #4a5a40;
+}
+
+body.advanced-theme .feature:hover {
+    border-color: #5a7048;
+    background-color: #424f38;
+    box-shadow: 0 0 15px rgba(107, 148, 80, 0.2);
+}
+
+body.advanced-theme .feature h3 {
+    color: #7ba860;
+}
+
+body.advanced-theme #screenshots {
+    background: linear-gradient(180deg, #323f30 0%, #28352a 100%);
+}
+
+body.advanced-theme .screenshot-item {
+    background-color: #3a4a35;
+    border: 2px solid #4a5a40;
+}
+
+body.advanced-theme .screenshot-item:hover {
+    border-color: #5a7048;
+    box-shadow: 0 0 20px rgba(107, 148, 80, 0.3);
+}
+
+body.advanced-theme .screenshot-item .caption {
+    background-color: #2a3828;
+    border-top: 1px solid #4a5a40;
+}
+
+body.advanced-theme #gameplay {
+    background-color: #2a3828;
+}
+
+body.advanced-theme .gameplay-section {
+    background-color: #3a4a35;
+    border-left: 4px solid #5a7040;
+}
+
+body.advanced-theme .gameplay-section h3 {
+    color: #7ba860;
+}
+
+body.advanced-theme .gameplay-section ul li::before {
+    color: #6b9450;
+}
+
+body.advanced-theme .gameplay-section ul li strong {
+    color: #7ba860;
+}
+
+body.advanced-theme #download {
+    background: linear-gradient(180deg, #28352a 0%, #323f30 100%);
+}
+
+body.advanced-theme .download-box {
+    background-color: #3a4a35;
+    border: 3px solid #5a7040;
+}
+
+body.advanced-theme .download-box h3 {
+    color: #7ba860;
+}
+
+body.advanced-theme .requirements h4 {
+    color: #6b9450;
+}
+
+body.advanced-theme .requirements ul li::before {
+    color: #6b9450;
+}
+
+body.advanced-theme footer {
+    background-color: #28352a;
+    border-top: 3px solid #5a7040;
+}
