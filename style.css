@@ -665,3 +665,136 @@ body.advanced-theme footer {
     background-color: #28352a;
     border-top: 3px solid #5a7040;
 }
+
+/* Socials Section */
+#socials {
+    background-color: #1f1f23;
+    padding: 80px 0;
+    text-align: center;
+}
+
+#socials p {
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    color: #888;
+}
+
+.socials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.social-link {
+    background-color: #2a2a2e;
+    border: 2px solid #3a3a3e;
+    padding: 30px 20px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.social-icon {
+    font-size: 2.5em;
+    font-weight: bold;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #1a1a1c;
+    border: 2px solid #4d4d58;
+}
+
+.social-info {
+    text-align: left;
+    flex: 1;
+}
+
+.social-info h3 {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+    color: #d0d0d0;
+}
+
+.social-info p {
+    font-size: 0.9em;
+    color: #888;
+    margin: 0;
+}
+
+/* YouTube */
+.social-link.youtube:hover {
+    border-color: #FF0000;
+}
+
+.social-link.youtube:hover .social-icon {
+    background-color: #FF0000;
+    border-color: #FF0000;
+    color: white;
+}
+
+/* Twitter/X */
+.social-link.twitter:hover {
+    border-color: #1DA1F2;
+}
+
+.social-link.twitter:hover .social-icon {
+    background-color: #000000;
+    border-color: #1DA1F2;
+    color: white;
+}
+
+/* Reddit */
+.social-link.reddit:hover {
+    border-color: #FF4500;
+}
+
+.social-link.reddit:hover .social-icon {
+    background-color: #FF4500;
+    border-color: #FF4500;
+    color: white;
+}
+
+/* Discord */
+.social-link.discord:hover {
+    border-color: #5865F2;
+}
+
+.social-link.discord:hover .social-icon {
+    background-color: #5865F2;
+    border-color: #5865F2;
+    color: white;
+}
+
+/* Advanced Theme - Socials */
+body.advanced-theme #socials {
+    background-color: #2a3828;
+}
+
+body.advanced-theme .social-link {
+    background-color: #3a4a35;
+    border: 2px solid #4a5a40;
+}
+
+body.advanced-theme .social-link:hover {
+    box-shadow: 0 8px 20px rgba(107, 148, 80, 0.3);
+}
+
+body.advanced-theme .social-icon {
+    background-color: #28352a;
+    border-color: #5a7040;
+}
+
