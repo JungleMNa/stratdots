@@ -18,31 +18,26 @@ document.querySelectorAll('nav a').forEach(anchor => {
 
 // Add active state to navigation based on scroll position
 window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav a');
-    
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.clientHeight;
-        
-        if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.style.color = '#888';
-        link.style.borderColor = 'transparent';
-        link.style.backgroundColor = 'transparent';
-        
-        if (link.getAttribute('href') === '#' + current) {
-            link.style.color = '#4a8a4a';
-            link.style.borderColor = '#2a4a2a';
-            link.style.backgroundColor = 'rgba(74, 138, 74, 0.1)';
-        }
-    });
+	const sections = document.querySelectorAll('section');
+	const navLinks = document.querySelectorAll('nav a');
+
+	let current = '';
+
+	sections.forEach(section => {
+		const sectionTop = section.offsetTop - 100;
+		const sectionHeight = section.clientHeight;
+
+		if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+			current = section.getAttribute('id');
+		}
+	});
+
+	navLinks.forEach(link => {
+		link.classList.remove('active');
+		if (link.getAttribute('href') === '#' + current) {
+			link.classList.add('active');
+		}
+	});
 });
 
 // Fade-in animation for sections on scroll
