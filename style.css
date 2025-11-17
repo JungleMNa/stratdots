@@ -7,11 +7,17 @@
 }
 
 body {
-    font-family: 'Courier New', monospace;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background-color: #1a1a1c;
+    background-image: linear-gradient(rgba(20,20,22,0.65), rgba(20,20,22,0.65)), url('screenshots/advanced/terrain.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: #d0d0d0;
-    line-height: 1.6;
+    line-height: 1.7;
     position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Noise/grain overlay for gritty look */
@@ -26,7 +32,7 @@ body {
         repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px);
     pointer-events: none;
     z-index: 1000;
-	opacity: 0.15;
+	opacity: 0.08;
 }
 
 .container {
@@ -45,11 +51,11 @@ header {
 }
 
 header h1 {
-    font-size: 3.5em;
+    font-size: 3.2em;
     color: #7f7f8c;
     text-shadow: 0 0 10px rgba(127, 127, 140, 0.4),
                  3px 3px 0 #1a1a1c;
-    letter-spacing: 8px;
+    letter-spacing: 5px;
     font-weight: bold;
 }
 
@@ -150,7 +156,7 @@ nav a.active {
 
 /* Hero Section */
 #hero {
-    background: linear-gradient(135deg, #28282e 0%, #1a1a1c 50%, #25252a 100%);
+    background: transparent;
     padding: 100px 0;
     text-align: center;
     border-bottom: 3px solid #4d4d58;
@@ -164,8 +170,7 @@ nav a.active {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
-        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(127, 127, 140, 0.03) 35px, rgba(127, 127, 140, 0.03) 70px);
+    background: linear-gradient(rgba(40,40,46,0.35), rgba(26,26,28,0.35));
     pointer-events: none;
 }
 
@@ -250,7 +255,7 @@ section h2 {
 }
 
 #about {
-    background-color: #1f1f23;
+    background-color: transparent;
 }
 
 #about p {
@@ -266,7 +271,7 @@ section h2 {
 
 /* Features Grid */
 #features {
-    background: linear-gradient(180deg, #1a1a1c 0%, #25252a 100%);
+    background: transparent;
 }
 
 .features-grid {
@@ -296,6 +301,9 @@ section h2 {
     font-size: 1.3em;
     margin-bottom: 15px;
     letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .feature p {
@@ -303,9 +311,23 @@ section h2 {
     line-height: 1.6;
 }
 
+/* Feature icon wrapper */
+.feat-ic {
+    display: inline-flex;
+    width: 1.25em;
+    height: 1.25em;
+    color: #9c9cac;
+}
+
+.feat-ic svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
 /* Gameplay Section */
 #gameplay {
-    background-color: #1f1f23;
+    background-color: transparent;
 }
 
 .gameplay-section {
@@ -350,7 +372,7 @@ section h2 {
 
 /* Download Section */
 #download {
-    background: linear-gradient(180deg, #1a1a1c 0%, #23232a 100%);
+    background: transparent;
     padding: 80px 0;
 }
 
@@ -434,7 +456,7 @@ footer .small {
 
 /* Screenshots Section */
 #screenshots {
-    background: linear-gradient(180deg, #25252a 0%, #1a1a1c 100%);
+    background: transparent;
 }
 
 .screenshot-gallery {
@@ -585,13 +607,12 @@ body.advanced-theme nav a::after {
 }
 
 body.advanced-theme #hero {
-    background: linear-gradient(135deg, #3a4a35 0%, #28352a 50%, #354038 100%);
+    background: transparent;
     border-bottom: 3px solid #5a7040;
 }
 
 body.advanced-theme #hero::before {
-    background-image: 
-        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(107, 148, 80, 0.05) 35px, rgba(107, 148, 80, 0.05) 70px);
+    background: linear-gradient(rgba(58,74,53,0.35), rgba(40,53,42,0.35));
 }
 
 body.advanced-theme #hero h2 {
@@ -624,11 +645,11 @@ body.advanced-theme section h2 {
 }
 
 body.advanced-theme #about {
-    background-color: #2a3828;
+    background-color: transparent;
 }
 
 body.advanced-theme #features {
-    background: linear-gradient(180deg, #28352a 0%, #323f30 100%);
+    background: transparent;
 }
 
 body.advanced-theme .feature {
@@ -647,7 +668,7 @@ body.advanced-theme .feature h3 {
 }
 
 body.advanced-theme #screenshots {
-    background: linear-gradient(180deg, #323f30 0%, #28352a 100%);
+    background: transparent;
 }
 
 body.advanced-theme .screenshot-item {
@@ -666,7 +687,7 @@ body.advanced-theme .screenshot-item .caption {
 }
 
 body.advanced-theme #gameplay {
-    background-color: #2a3828;
+    background-color: transparent;
 }
 
 body.advanced-theme .gameplay-section {
@@ -687,7 +708,7 @@ body.advanced-theme .gameplay-section ul li strong {
 }
 
 body.advanced-theme #download {
-    background: linear-gradient(180deg, #28352a 0%, #323f30 100%);
+    background: transparent;
 }
 
 body.advanced-theme .download-box {
@@ -714,7 +735,7 @@ body.advanced-theme footer {
 
 /* Socials Section */
 #socials {
-    background-color: #1f1f23;
+    background-color: transparent;
     padding: 80px 0;
     text-align: center;
 }
@@ -762,6 +783,12 @@ body.advanced-theme footer {
     border-radius: 50%;
     background-color: #1a1a1c;
     border: 2px solid #4d4d58;
+}
+
+.social-icon svg {
+    width: 28px;
+    height: 28px;
+    display: block;
 }
 
 /* Reduced motion support */
@@ -837,7 +864,7 @@ body.advanced-theme footer {
 
 /* Advanced Theme - Socials */
 body.advanced-theme #socials {
-    background-color: #2a3828;
+    background-color: transparent;
 }
 
 body.advanced-theme .social-link {

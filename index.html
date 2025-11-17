@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StratDots - Frontline War Game</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="advanced-theme">
     <div class="noise-overlay"></div>
     
     <header>
         <div class="container">
             <h1>STRATDOTS</h1>
             <p class="tagline">// REAL-TIME STRATEGY GAME //</p>
-            <div class="theme-switcher">
-                <button id="defaultTheme" class="theme-btn active">DEFAULT</button>
-                <button id="advancedTheme" class="theme-btn">ADVANCED PACK</button>
-            </div>
         </div>
     </header>
 
@@ -54,31 +53,63 @@
             <h2>[ FEATURES ]</h2>
             <div class="features-grid">
                 <div class="feature">
-                    <h3>[X] REAL-TIME COMBAT</h3>
+                    <h3><span class="feat-ic" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 5v3M12 16v3M5 12h3M16 12h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                        </svg>
+                    </span> Real-Time Combat</h3>
                     <p>Command infantry, cavalry, and tanks in dynamic battles with intelligent AI opponents.</p>
                 </div>
                 <div class="feature">
-                    <h3>[#] CUSTOM MAPS</h3>
+                    <h3><span class="feat-ic" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M9 4v14M15 6v14" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </span> Custom Maps</h3>
                     <p>2 built-in historical maps (Medieval 1444 & WW2 1941) plus a custom map maker to design your own battlefields.</p>
                 </div>
                 <div class="feature">
-                    <h3>[>] UNIT FORMATIONS</h3>
+                    <h3><span class="feat-ic" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </span> Unit Formations</h3>
                     <p>Deploy units in line, arrow, single file, or grouped formations for strategic positioning.</p>
                 </div>
                 <div class="feature">
-                    <h3>[^] AIR SUPPORT</h3>
+                    <h3><span class="feat-ic" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 13l-8-3 20-7-7 20-3-8-4 4v-6l4-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </span> Air Support</h3>
                     <p>Build airbases and deploy Su-25 ground attack aircraft for devastating bombing runs.</p>
                 </div>
                 <div class="feature">
-                    <h3>[=] DEFENSIVE STRUCTURES</h3>
+                    <h3><span class="feat-ic" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </span> Defensive Structures</h3>
                     <p>Construct walls, artillery emplacements, and fortifications to hold the line.</p>
                 </div>
                 <div class="feature">
-                    <h3>[*] TEXTURE PACKS</h3>
+                    <h3><span class="feat-ic" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 3l9 5-9 5-9-5 9-5zM3 14l9 5 9-5M3 10l9 5 9-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </span> Texture Packs</h3>
                     <p>Customize your experience with Advanced Pack and custom texture packs you can make!.</p>
                 </div>
                 <div class="feature">
-                    <h3>[!] DIFFICULTY MODES</h3>
+                    <h3><span class="feat-ic" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 13a8 8 0 0116 0v3H4v-3z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 13l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </span> Difficulty Modes</h3>
                     <p>Easy, Medium, and Hard AI difficulty. Plus Sandbox Mode for unlimited resources.</p>
                 </div>
             </div>
@@ -90,18 +121,15 @@
             <h2>[ SCREENSHOTS ]</h2>
             <div class="screenshot-gallery">
                 <div class="screenshot-item">
-                    <img class="default-screenshot" src="screenshots/default/battle1.png" alt="Intense battlefield combat with infantry and tanks">
-                    <img class="advanced-screenshot" src="screenshots/advanced/battle1.png" alt="Intense battlefield combat with advanced pack visuals" style="display: none;">
+                    <img class="advanced-screenshot" src="screenshots/advanced/battle1.png" alt="Intense battlefield combat with advanced pack visuals">
                     <p class="caption">Intense frontline battle - Infantry and tank formations clash</p>
                 </div>
                 <div class="screenshot-item">
-                    <img class="default-screenshot" src="screenshots/default/airbase.png" alt="Airbase with Su-25 ground attack aircraft">
-                    <img class="advanced-screenshot" src="screenshots/advanced/airbase.png" alt="Airbase with advanced pack visuals" style="display: none;">
+                    <img class="advanced-screenshot" src="screenshots/advanced/airbase.png" alt="Airbase with advanced pack visuals">
                     <p class="caption">Su-25 bombing run - Air support devastating enemy positions</p>
                 </div>
                 <div class="screenshot-item">
-                    <img class="default-screenshot" src="screenshots/default/terrain.png" alt="Built-in battlefield maps">
-                    <img class="advanced-screenshot" src="screenshots/advanced/terrain.png" alt="Battlefield maps with advanced pack visuals" style="display: none;">
+                    <img class="advanced-screenshot" src="screenshots/advanced/terrain.png" alt="Battlefield maps with advanced pack visuals">
                     <p class="caption">Built-in maps and custom map maker - Create your own battlefields</p>
                 </div>
             </div>
@@ -169,28 +197,52 @@
             <p>Follow StratDots on social media for updates, gameplay videos, and community content!</p>
             <div class="socials-grid">
                 <a href="https://www.youtube.com/@strategydots" target="_blank" class="social-link youtube">
-                    <div class="social-icon">▶</div>
+                    <div class="social-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="5" width="20" height="14" rx="3" ry="3" fill="currentColor" opacity="0.2"/>
+                            <path d="M10 9l6 3-6 3V9z" fill="currentColor"/>
+                        </svg>
+                    </div>
                     <div class="social-info">
                         <h3>YouTube</h3>
                         <p>Gameplay videos & trailers</p>
                     </div>
                 </a>
                 <a href="https://x.com/strategydots" target="_blank" class="social-link twitter">
-                    <div class="social-icon">X</div>
+                    <div class="social-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                            <path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <div class="social-info">
                         <h3>X (Twitter)</h3>
                         <p>Updates & announcements</p>
                     </div>
                 </a>
                 <a href="https://www.reddit.com/user/stratdots/" target="_blank" class="social-link reddit">
-                    <div class="social-icon">R</div>
+                    <div class="social-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                            <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="9.5" cy="12" r="1" fill="currentColor"/>
+                            <circle cx="14.5" cy="12" r="1" fill="currentColor"/>
+                            <path d="M9 14c.8.6 1.9 1 3 1s2.2-.4 3-1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="18.5" cy="9" r="1.5" stroke="currentColor" stroke-width="2"/>
+                            <path d="M16.5 9.5l-2-1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <div class="social-info">
                         <h3>Reddit</h3>
                         <p>Community discussions</p>
                     </div>
                 </a>
                 <a href="https://discord.gg/jHAFvVjGcy" target="_blank" class="social-link discord">
-                    <div class="social-icon">D</div>
+                    <div class="social-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                            <path d="M7 8c2-1 8-1 10 0 1.5 1 2 3 2 5 0 3-2 4-2 4-1.5-1-3-1-3-1l-.5 1.5c-1 .2-2 .2-3 0L10 16s-1.5 0-3 1c0 0-2-1-2-4 0-2 0-4 2-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <circle cx="10" cy="12" r="1" fill="currentColor"/>
+                            <circle cx="14" cy="12" r="1" fill="currentColor"/>
+                        </svg>
+                    </div>
                     <div class="social-info">
                         <h3>Discord</h3>
                         <p>Join the community server</p>
@@ -239,7 +291,6 @@
         </div>
     </footer>
 
-    <script src="theme.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
